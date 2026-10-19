@@ -1,6 +1,6 @@
 # Belva YONTA · Portfolio Data et IA
 
-Élève ingénieure Data et IA à l'EFREI Paris (Big Data et Machine Learning), **disponible immédiatement en alternance** (jusqu'à l'été 2028, rythme 3j/2j ou 1 sem/1 sem).
+Élève ingénieure Data et IA à l'EFREI Paris (Big Data et Machine Learning), **disponible immédiatement en alternance** (jusqu'à l'été 2028, rythme 3 jours en entreprise / 2 jours à l’école).
 
 👉 **Voir le portfolio : https://kysyb2006.github.io/belva.yonta/**
 
