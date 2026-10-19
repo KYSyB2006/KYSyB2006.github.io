@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Belva YONTA · Data et IA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Belva YONTA, élève ingénieure Data et IA à l’EFREI Paris. Disponible en alternance dès septembre 2026 : pipelines de données, tableaux de bord Power BI et agents IA.">
+<meta name="author" content="Belva YONTA">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Belva YONTA · Data et IA">
+<meta property="og:description" content="Élève ingénieure Data et IA, disponible en alternance dès septembre 2026.">
+<meta property="og:url" content="https://kysyb2006.github.io/belva.yonta/">
+<meta property="og:locale" content="fr_FR">
+<link rel="canonical" href="https://kysyb2006.github.io/belva.yonta/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAFAFA}
+a{color:#1D4ED8}a:hover{color:#1E3A8A}
+.chip{display:inline-flex;align-items:center;min-height:32px;padding:0 12px;border-radius:999px;border:1px solid #E5E5E5;background:#FFFFFF;font-size:14px;color:#171717}
+.chip-b{border-color:#C7D7FE;background:#EEF3FF;color:#1E3A8A}
+.tab:focus-visible,.btn:focus-visible{outline:2px solid #1D4ED8;outline-offset:3px}
+.tab:hover{color:#0A0A0A}
+.btn-dark:hover{background:#1D4ED8}
+.btn-line:hover{border-color:#0A0A0A}
+.card-h:hover{border-color:#0A0A0A;transform:translateY(-2px)}
+.int-card{transition:transform .2s ease, box-shadow .2s ease}
+.int-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(10,10,10,0.10)}
+.an{transform-box:fill-box}
+.a-pulse{animation:aPulse 2.4s ease-in-out infinite}
+.a-flow{stroke-dasharray:6 34;animation:aFlow 1.6s linear infinite}
+.a-grow{transform-origin:50% 100%;animation:aGrow 2.8s ease-in-out infinite}
+.a-draw{stroke-dasharray:220;animation:aDraw 3.2s ease-in-out infinite}
+.a-flip{transform-origin:0% 50%;animation:aFlip 3.6s ease-in-out infinite}
+.a-wave{animation:aWave 2.4s linear infinite}
+.a-wave2{animation:aWave 3.6s linear infinite}
+.a-rise{animation:aRise 2.8s ease-in infinite}
+.a-route{stroke-dasharray:5 7;animation:aRoute 1.2s linear infinite}
+.a-ring{transform-origin:50% 50%;animation:aRing 2s ease-out infinite}
+@keyframes aPulse{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes aFlow{to{stroke-dashoffset:-40}}
+@keyframes aGrow{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}
+@keyframes aDraw{0%{stroke-dashoffset:220}55%,100%{stroke-dashoffset:0}}
+@keyframes aFlip{0%,20%{transform:scaleX(1)}50%,70%{transform:scaleX(-1)}100%{transform:scaleX(1)}}
+@keyframes aWave{to{transform:translateX(-40px)}}
+@keyframes aRise{0%{transform:translateY(0);opacity:0}25%{opacity:1}100%{transform:translateY(-34px);opacity:0}}
+@keyframes aRoute{to{stroke-dashoffset:-12}}
+@keyframes aRing{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.2);opacity:0}}
+@media (prefers-reduced-motion: reduce){.an,.a-pulse,.a-flow,.a-grow,.a-draw,.a-flip,.a-wave,.a-wave2,.a-rise,.a-route,.a-ring{animation:none !important}}
+
+[hidden]{display:none !important}
+.contents{display:contents}
+.tab{flex:0 0 auto;min-height:52px;padding:0 18px;border:0;background:transparent;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600;color:#737373;box-shadow:none;white-space:nowrap}
+.tab[aria-selected="true"]{color:#0A0A0A;box-shadow:inset 0 -3px 0 #1D4ED8}
+.filt{min-height:44px;padding:0 16px;border-radius:999px;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;background:#FFFFFF;color:#404040;border:1px solid #D4D4D4}
+.filt:hover{border-color:#0A0A0A}
+.filt[aria-pressed="true"]{background:#0A0A0A;color:#FFFFFF;border-color:#0A0A0A}
+.filt:focus-visible{outline:2px solid #1D4ED8;outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:8px;z-index:10;background:#0A0A0A;color:#FFFFFF;padding:10px 16px;border-radius:999px;text-decoration:none}
+.skip:focus{left:16px}
+.gh-sk{display:inline-block;min-width:2.5ch;border-radius:8px;background:#F0F0F0;color:transparent}
+@media (prefers-reduced-motion: reduce){.card-h,.int-card{transition:none !important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<div style="min-height: 100vh; background: #FAFAFA; color: #0A0A0A; font-family: 'DM Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.6">
+
+  <!-- Barre du haut -->
+  <header style="border-bottom: 1px solid #E5E5E5; background: #FFFFFF">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+      <div style="display: flex; align-items: center; gap: 12px">
+        <div aria-hidden="true" style="width: 40px; height: 40px; border-radius: 12px; background: #0A0A0A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px">BY</div>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 17px">Belva YONTA</span>
+      </div>
+      <nav aria-label="Liens externes" style="display: flex; flex-wrap: wrap; gap: 8px">
+        <a class="btn btn-line" href="https://github.com/KYSyB2006" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border: 1px solid #D4D4D4; border-radius: 999px; color: #0A0A0A; text-decoration: none; font-size: 14px; font-weight: 500">GitHub</a>
+        <a class="btn btn-line" href="https://www.linkedin.com/in/samyra-yonta" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border: 1px solid #D4D4D4; border-radius: 999px; color: #0A0A0A; text-decoration: none; font-size: 14px; font-weight: 500">LinkedIn</a>
+        <a class="btn btn-dark" href="mailto:yontabelva@gmail.com" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; background: #0A0A0A; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600">Me contacter</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section style="max-width: 1120px; margin: 0 auto; padding: 72px 24px 48px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-end">
+    <div style="flex: 999 1 520px; min-width: 0">
+      <p style="margin: 0 0 16px; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #1D4ED8">
+        <span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #1D4ED8"></span>
+        Disponible en alternance dès septembre 2026
+      </p>
+      <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(44px, 7vw, 84px); line-height: 1; letter-spacing: -0.03em">Belva YONTA</h1>
+      <p style="margin: 20px 0 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 500; color: #404040">Élève ingénieure Data et IA · Big Data et Machine Learning</p>
+      <p style="margin: 16px 0 0; max-width: 560px; font-size: 18px; color: #525252">Je transforme des données complexes en décisions : pipelines fiables, tableaux de bord utiles au métier et agents IA qui raisonnent.</p>
+    </div>
+    <aside aria-label="Disponibilité" style="flex: 1 1 300px; background: #0A0A0A; color: #FFFFFF; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 18px">
+      <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #A3A3A3">Alternance · EFREI Paris</div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+        <div><div style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700">24 mois</div><div style="font-size: 14px; color: #A3A3A3">sept. 2026 – juil. 2028</div></div>
+        <div><div style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; color: #93B4FF">3j / 2j</div><div style="font-size: 14px; color: #A3A3A3">ou 1 sem / 1 sem</div></div>
+      </div>
+      <div style="height: 1px; background: #262626"></div>
+      <div style="font-size: 15px; color: #E5E5E5">Paris, Île-de-France · <a href="mailto:yontabelva@gmail.com" style="color: #93B4FF">yontabelva@gmail.com</a></div>
+    </aside>
+  </section>
+
+  <!-- Onglets -->
+  <div style="position: sticky; top: 0; z-index: 2; background: rgba(250,250,250,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid #E5E5E5">
+    <div role="tablist" aria-label="Sections du profil" style="max-width: 1120px; margin: 0 auto; padding: 0 24px; display: flex; gap: 4px; overflow-x: auto">
+      <button class="tab" role="tab" id="tab-profil" aria-controls="panel-profil" aria-selected="true" tabindex="0">Profil</button>
+      <button class="tab" role="tab" id="tab-competences" aria-controls="panel-competences" aria-selected="false" tabindex="-1">Compétences</button>
+      <button class="tab" role="tab" id="tab-formation" aria-controls="panel-formation" aria-selected="false" tabindex="-1">Formation</button>
+      <button class="tab" role="tab" id="tab-experience" aria-controls="panel-experience" aria-selected="false" tabindex="-1">Expérience et projets</button>
+      <button class="tab" role="tab" id="tab-github" aria-controls="panel-github" aria-selected="false" tabindex="-1">GitHub</button>
+    </div>
+  </div>
+
+  <main id="contenu" style="max-width: 1120px; margin: 0 auto; padding: 48px 24px 96px">
+
+    <!-- PROFIL -->
+    <div class="contents" id="panel-profil" data-panel="profil">
+      <section role="tabpanel" aria-labelledby="tab-profil" tabindex="0" style="display: flex; flex-wrap: wrap; gap: 32px">
+        <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 32px">
+          <div>
+            <h2 style="margin: 0 0 12px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600">À propos</h2>
+            <p style="margin: 0; font-size: 18px; color: #404040">Étudiante en 2e année d’ingénierie informatique à l’EFREI Paris, je me spécialise en Data et Intelligence Artificielle. Curieuse et déterminée, je monte vite en compétence sur des environnements exigeants : Python, SQL et NoSQL pour explorer, valoriser des données complexes et automatiser des processus.</p>
+            <p style="margin: 16px 0 0; font-size: 18px; color: #404040">J’ai conçu des agents IA décisionnels et des applications data de bout en bout. Je veux maintenant relever de vrais enjeux métier aux côtés d’experts.</p>
+          </div>
+          <div>
+            <h2 style="margin: 0 0 16px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600">Ce que j’apporte</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+              <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 24px">
+                <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #1D4ED8">01</div>
+                <h3 style="margin: 8px 0 6px; font-size: 18px">Des pipelines fiables</h3>
+                <p style="margin: 0; color: #525252; font-size: 15px">Collecte, nettoyage, modélisation et mise à disposition des données.</p>
+              </div>
+              <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 24px">
+                <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #1D4ED8">02</div>
+                <h3 style="margin: 8px 0 6px; font-size: 18px">Des tableaux de bord utiles</h3>
+                <p style="margin: 0; color: #525252; font-size: 15px">Des KPI pensés pour le métier, avec Power BI et DAX.</p>
+              </div>
+              <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 24px">
+                <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #1D4ED8">03</div>
+                <h3 style="margin: 8px 0 6px; font-size: 18px">De l’IA concrète</h3>
+                <p style="margin: 0; color: #525252; font-size: 15px">Agents décisionnels, Machine Learning, LLM et prompt engineering.</p>
+              </div>
+              <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 24px">
+                <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #1D4ED8">04</div>
+                <h3 style="margin: 8px 0 6px; font-size: 18px">Une montée en compétence rapide</h3>
+                <p style="margin: 0; color: #525252; font-size: 15px">Prouvée par un parcours d’excellence, de la prépa à l’école d’ingénieur.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+            <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 20px"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700">955</div><div style="font-size: 14px; color: #525252">TOEIC sur 990 · anglais C1</div></div>
+            <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 20px"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; color: #1D4ED8">Major</div><div style="font-size: 14px; color: #525252">de promotion en classes prépa</div></div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 24px">
+            <h3 style="margin: 0 0 12px; font-size: 16px">Savoir-être</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              <span class="chip">Rigueur analytique</span><span class="chip">Esprit d’équipe</span><span class="chip">Communication</span><span class="chip">Adaptabilité</span><span class="chip">Autonomie</span><span class="chip">Apprentissage rapide</span><span class="chip">Créativité</span>
+            </div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 24px">
+            <h3 style="margin: 0 0 12px; font-size: 16px">Distinctions</h3>
+            <ul style="margin: 0; padding: 0 0 0 18px; color: #404040; font-size: 15px; display: flex; flex-direction: column; gap: 6px">
+              <li>Chargée d’étude de projet, Junior UTBM (2026)</li>
+              <li>Chef de promotion (2021 – 2024)</li>
+              <li>Prix Excellence Baccalauréat C (2023), mention Bien</li>
+            </ul>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 24px">
+            <h3 style="margin: 0 0 12px; font-size: 16px">Langues</h3>
+            <p style="margin: 0; color: #404040; font-size: 15px">Français natif · Anglais C1 (TOEIC 955/990)</p>
+          </div>
+        </div>
+
+        <!-- Centres d'intérêt -->
+        <div style="flex: 1 1 100%; margin-top: 24px">
+          <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #1D4ED8">Centres d’intérêt</div>
+          <h2 style="margin: 6px 0 20px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600">Ce qui m’anime</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+
+            <!-- IA -->
+            <article class="int-card" style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; overflow: hidden">
+              <div style="background: #F5F7FF; height: 140px">
+                <svg viewBox="0 0 240 140" width="100%" height="140" role="img" aria-label="Réseau de neurones animé">
+                  <g stroke="#D4D4D4" stroke-width="1.5">
+                    <line x1="50" y1="35" x2="120" y2="35"/><line x1="50" y1="35" x2="120" y2="70"/><line x1="50" y1="35" x2="120" y2="105"/>
+                    <line x1="50" y1="70" x2="120" y2="35"/><line x1="50" y1="70" x2="120" y2="70"/><line x1="50" y1="70" x2="120" y2="105"/>
+                    <line x1="50" y1="105" x2="120" y2="35"/><line x1="50" y1="105" x2="120" y2="70"/><line x1="50" y1="105" x2="120" y2="105"/>
+                    <line x1="120" y1="35" x2="190" y2="52"/><line x1="120" y1="70" x2="190" y2="52"/><line x1="120" y1="105" x2="190" y2="52"/>
+                    <line x1="120" y1="35" x2="190" y2="88"/><line x1="120" y1="70" x2="190" y2="88"/><line x1="120" y1="105" x2="190" y2="88"/>
+                  </g>
+                  <g stroke="#1D4ED8" stroke-width="2.5" stroke-linecap="round">
+                    <line class="a-flow" x1="50" y1="35" x2="120" y2="70"/>
+                    <line class="a-flow" style="animation-delay: .5s" x1="50" y1="105" x2="120" y2="35"/>
+                    <line class="a-flow" style="animation-delay: .3s" x1="120" y1="70" x2="190" y2="52"/>
+                    <line class="a-flow" style="animation-delay: .9s" x1="120" y1="105" x2="190" y2="88"/>
+                  </g>
+                  <g stroke="#0A0A0A" stroke-width="2" fill="#FFFFFF">
+                    <circle cx="50" cy="35" r="8"/><circle cx="50" cy="70" r="8"/><circle cx="50" cy="105" r="8"/>
+                    <circle cx="120" cy="35" r="8"/><circle cx="120" cy="70" r="8"/><circle cx="120" cy="105" r="8"/>
+                    <circle cx="190" cy="52" r="8"/><circle cx="190" cy="88" r="8"/>
+                  </g>
+                  <circle class="a-pulse" cx="120" cy="70" r="5" fill="#1D4ED8"/>
+                  <circle class="a-pulse" style="animation-delay: .8s" cx="190" cy="52" r="5" fill="#1D4ED8"/>
+                  <circle class="a-pulse" style="animation-delay: 1.4s" cx="50" cy="105" r="5" fill="#1D4ED8"/>
+                </svg>
+              </div>
+              <div style="padding: 18px 20px 22px">
+                <h3 style="margin: 0 0 6px; font-size: 17px">Intelligence artificielle</h3>
+                <p style="margin: 0; font-size: 14px; color: #525252">Comprendre comment une machine apprend et décide : des agents MiniMax jusqu’aux LLM.</p>
+              </div>
+            </article>
+
+            <!-- Data Science -->
+            <article class="int-card" style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; overflow: hidden">
+              <div style="background: #F5F7FF; height: 140px">
+                <svg viewBox="0 0 240 140" width="100%" height="140" role="img" aria-label="Graphique de données animé">
+                  <line x1="34" y1="118" x2="210" y2="118" stroke="#0A0A0A" stroke-width="2"/>
+                  <line x1="34" y1="22" x2="34" y2="118" stroke="#0A0A0A" stroke-width="2"/>
+                  <g fill="#E5E5E5">
+                    <rect class="an a-grow" x="52" y="78" width="22" height="40" rx="4"/>
+                    <rect class="an a-grow" style="animation-delay: .3s" x="88" y="62" width="22" height="56" rx="4"/>
+                    <rect class="an a-grow" style="animation-delay: .6s" x="124" y="50" width="22" height="68" rx="4"/>
+                    <rect class="an a-grow" style="animation-delay: .9s" x="160" y="34" width="22" height="84" rx="4"/>
+                  </g>
+                  <polyline class="a-draw" points="44,100 80,84 116,74 152,52 196,30" fill="none" stroke="#1D4ED8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <g fill="#0A0A0A"><circle cx="63" cy="94" r="3"/><circle cx="99" cy="76" r="3"/><circle cx="135" cy="70" r="3"/><circle cx="171" cy="42" r="3"/></g>
+                </svg>
+              </div>
+              <div style="padding: 18px 20px 22px">
+                <h3 style="margin: 0 0 6px; font-size: 17px">Data Science et ML</h3>
+                <p style="margin: 0; font-size: 14px; color: #525252">Faire parler les données : derrière chaque jeu de données se cache une question métier.</p>
+              </div>
+            </article>
+
+            <!-- Lecture -->
+            <article class="int-card" style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; overflow: hidden">
+              <div style="background: #F5F7FF; height: 140px">
+                <svg viewBox="0 0 240 140" width="100%" height="140" role="img" aria-label="Livre ouvert dont une page se tourne">
+                  <path d="M50 112 Q120 100 190 112" fill="none" stroke="#D4D4D4" stroke-width="2"/>
+                  <rect x="50" y="30" width="70" height="80" rx="4" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="2"/>
+                  <rect x="120" y="30" width="70" height="80" rx="4" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="2"/>
+                  <g stroke="#D4D4D4" stroke-width="2" stroke-linecap="round">
+                    <line x1="62" y1="48" x2="108" y2="48"/><line x1="62" y1="60" x2="108" y2="60"/><line x1="62" y1="72" x2="100" y2="72"/><line x1="62" y1="84" x2="108" y2="84"/>
+                    <line x1="132" y1="48" x2="178" y2="48"/><line x1="132" y1="60" x2="170" y2="60"/><line x1="132" y1="72" x2="178" y2="72"/>
+                  </g>
+                  <g class="an a-flip">
+                    <rect x="120" y="30" width="70" height="80" rx="4" fill="#EEF3FF" stroke="#1D4ED8" stroke-width="2"/>
+                    <g stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" opacity="0.6"><line x1="132" y1="50" x2="176" y2="50"/><line x1="132" y1="62" x2="168" y2="62"/><line x1="132" y1="74" x2="176" y2="74"/></g>
+                  </g>
+                  <line x1="120" y1="28" x2="120" y2="112" stroke="#0A0A0A" stroke-width="2"/>
+                </svg>
+              </div>
+              <div style="padding: 18px 20px 22px">
+                <h3 style="margin: 0 0 6px; font-size: 17px">Lecture</h3>
+                <p style="margin: 0; font-size: 14px; color: #525252">Nourrir ma curiosité au-delà de la technique et apprendre autrement.</p>
+              </div>
+            </article>
+
+            <!-- Natation -->
+            <article class="int-card" style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; overflow: hidden">
+              <div style="background: #F5F7FF; height: 140px; overflow: hidden">
+                <svg viewBox="0 0 240 140" width="100%" height="140" role="img" aria-label="Vagues et bulles animées">
+                  <circle class="an a-rise" cx="70" cy="100" r="4" fill="none" stroke="#1D4ED8" stroke-width="2"/>
+                  <circle class="an a-rise" style="animation-delay: .9s" cx="120" cy="104" r="3" fill="none" stroke="#1D4ED8" stroke-width="2"/>
+                  <circle class="an a-rise" style="animation-delay: 1.7s" cx="168" cy="100" r="5" fill="none" stroke="#1D4ED8" stroke-width="2"/>
+                  <g class="a-wave"><path d="M0 52 q10 -10 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="#0A0A0A" stroke-width="2.5" stroke-linecap="round"/></g>
+                  <g class="a-wave2"><path d="M0 76 q10 -10 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="#1D4ED8" stroke-width="3" stroke-linecap="round"/></g>
+                  <g class="a-wave"><path d="M0 120 q10 -10 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="#D4D4D4" stroke-width="2.5" stroke-linecap="round"/></g>
+                </svg>
+              </div>
+              <div style="padding: 18px 20px 22px">
+                <h3 style="margin: 0 0 6px; font-size: 17px">Natation</h3>
+                <p style="margin: 0; font-size: 14px; color: #525252">L’endurance et la régularité, dans l’eau comme dans les projets.</p>
+              </div>
+            </article>
+
+            <!-- Voyage -->
+            <article class="int-card" style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; overflow: hidden">
+              <div style="background: #F5F7FF; height: 140px">
+                <svg viewBox="0 0 240 140" width="100%" height="140" role="img" aria-label="Itinéraire animé de Douala à Belfort puis Paris">
+                  <circle cx="120" cy="70" r="56" fill="none" stroke="#E5E5E5" stroke-width="1.5"/>
+                  <ellipse cx="120" cy="70" rx="24" ry="56" fill="none" stroke="#E5E5E5" stroke-width="1.5"/>
+                  <line x1="64" y1="70" x2="176" y2="70" stroke="#E5E5E5" stroke-width="1.5"/>
+                  <path class="a-route" d="M72 116 Q96 52 176 52 Q162 34 146 38" fill="none" stroke="#1D4ED8" stroke-width="2.5" stroke-linecap="round"/>
+                  <circle cx="72" cy="116" r="5" fill="#0A0A0A"/>
+                  <circle cx="176" cy="52" r="5" fill="#0A0A0A"/>
+                  <circle class="an a-ring" cx="146" cy="38" r="6" fill="none" stroke="#1D4ED8" stroke-width="2"/>
+                  <circle cx="146" cy="38" r="5" fill="#1D4ED8"/>
+                  <g font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#0A0A0A">
+                    <text x="82" y="124">Douala</text>
+                    <text x="184" y="56">Belfort</text>
+                    <text x="104" y="30">Paris</text>
+                  </g>
+                </svg>
+              </div>
+              <div style="padding: 18px 20px 22px">
+                <h3 style="margin: 0 0 6px; font-size: 17px">Voyages et cultures</h3>
+                <p style="margin: 0; font-size: 14px; color: #525252">De Douala à Paris via Belfort : m’adapter à de nouvelles cultures est devenu une force.</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- COMPÉTENCES -->
+    <div class="contents" id="panel-competences" data-panel="competences" hidden>
+      <section role="tabpanel" aria-labelledby="tab-competences" tabindex="0" style="display: flex; flex-direction: column; gap: 24px">
+        <div>
+          <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600">Compétences techniques</h2>
+          <p style="margin: 8px 0 0; color: #525252">Ma boîte à outils, de la collecte de la donnée jusqu’au modèle.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+          <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 24px">
+            <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #1D4ED8">IA</div>
+            <h3 style="margin: 6px 0 14px; font-size: 19px">Machine Learning et statistiques</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">NumPy</span><span class="chip">scikit-learn</span><span class="chip">Analyse statistique</span><span class="chip">LangChain</span><span class="chip">Prompt engineering</span><span class="chip">Chaînage de prompts</span></div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 24px">
+            <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #1D4ED8">Agents</div>
+            <h3 style="margin: 6px 0 14px; font-size: 19px">Agents IA décisionnels</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="chip">MiniMax</span><span class="chip">Alpha-Beta</span><span class="chip">Iterative Deepening</span><span class="chip">Prolog</span><span class="chip">Heuristiques</span></div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 24px">
+            <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #1D4ED8">Pipelines</div>
+            <h3 style="margin: 6px 0 14px; font-size: 19px">Préparation des données</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="chip">Data Cleaning</span><span class="chip">Power Query M</span><span class="chip">Data pipelines</span><span class="chip">Databricks</span><span class="chip">WebSocket temps réel</span><span class="chip">RFID</span></div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 24px">
+            <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #1D4ED8">Visualisation</div>
+            <h3 style="margin: 6px 0 14px; font-size: 19px">Data visualisation</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Jupyter</span><span class="chip">Cartes KPI</span></div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 24px">
+            <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #1D4ED8">Bases</div>
+            <h3 style="margin: 6px 0 14px; font-size: 19px">Bases de données</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">Modèle en étoile</span></div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 24px">
+            <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #1D4ED8">Outils</div>
+            <h3 style="margin: 6px 0 14px; font-size: 19px">Langages et DevOps</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="chip">C / C++</span><span class="chip">Java (POO)</span><span class="chip">Git et GitHub</span><span class="chip">GitHub Actions</span><span class="chip">Docker</span><span class="chip">Linux</span></div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 24px">
+            <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #1D4ED8">Embarqué</div>
+            <h3 style="margin: 6px 0 14px; font-size: 19px">Temps réel et programmation matérielle</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="chip">ESP32</span><span class="chip">Arduino</span><span class="chip">C / C++</span><span class="chip">Capteurs RFID</span><span class="chip">WebSocket</span><span class="chip">Flux temps réel</span></div>
+          </div>
+        </div>
+        <div style="background: #0A0A0A; color: #FFFFFF; border-radius: 24px; padding: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px">
+          <div style="flex: 1 1 240px">
+            <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #93B4FF">En cours d’approfondissement</div>
+            <div style="margin-top: 4px; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600">Cycle EFREI 2026 – 2028</div>
+          </div>
+          <div style="flex: 2 1 420px; display: flex; flex-wrap: wrap; gap: 8px">
+            <span class="chip" style="background: #171717; border-color: #333333; color: #FFFFFF">Deep Learning</span><span class="chip" style="background: #171717; border-color: #333333; color: #FFFFFF">Big Data Frameworks</span><span class="chip" style="background: #171717; border-color: #333333; color: #FFFFFF">Cloud Computing</span><span class="chip" style="background: #171717; border-color: #333333; color: #FFFFFF">MLOps</span><span class="chip" style="background: #171717; border-color: #333333; color: #FFFFFF">Reinforcement Learning</span><span class="chip" style="background: #171717; border-color: #333333; color: #FFFFFF">LLM et IA générative</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- FORMATION -->
+    <div class="contents" id="panel-formation" data-panel="formation" hidden>
+      <section role="tabpanel" aria-labelledby="tab-formation" tabindex="0" style="display: flex; flex-direction: column; gap: 32px">
+        <div>
+          <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #1D4ED8">Mon parcours</div>
+          <h2 style="margin: 6px 0 0; font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 600; letter-spacing: -0.01em">Une histoire en trois chapitres</h2>
+          <p style="margin: 8px 0 0; max-width: 620px; color: #525252; font-size: 17px">De Douala à Paris, chaque étape m’a rapprochée de la Data et de l’IA.</p>
+        </div>
+
+        <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0; border-left: 2px solid #E5E5E5; margin-left: 8px">
+
+          <!-- Chapitre 1 -->
+          <li style="position: relative; padding: 0 0 48px 40px">
+            <span aria-hidden="true" style="position: absolute; left: -9px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; border: 3px solid #0A0A0A; box-sizing: border-box"></span>
+            <div style="font-size: 14px; font-weight: 600; color: #525252">Chapitre 1 · 2023 – 2025 · Douala</div>
+            <h3 style="margin: 4px 0 20px; font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600">Les fondations</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
+              <div style="flex: 0 0 160px; width: 160px; height: 120px; box-sizing: border-box; padding: 10px; background: #FFFFFF; border-radius: 18px; box-shadow: 0 1px 2px rgba(10,10,10,0.06), 0 12px 28px rgba(10,10,10,0.12); display: flex; align-items: center; justify-content: center"><img src="assets/logo-iuc.png" decoding="async" alt="Logo IUC" style="max-width: 100%; max-height: 100%; object-fit: contain"></div>
+              <div style="flex: 1 1 420px; min-width: 0">
+                <p style="margin: 0; font-size: 17px; color: #404040">Tout commence à l’IUC, en classes préparatoires filière Ingénierie. Deux années d’algèbre linéaire, d’analyse numérique et de probabilités, où j’apprends la rigueur et l’endurance face aux problèmes difficiles.</p>
+                <p style="margin: 12px 0 0; font-size: 17px; color: #404040">Entre les deux années, un stage chez Sparte Robotics me fait toucher du doigt la donnée en temps réel. Et à l’arrivée, une belle récompense :</p>
+                <div style="margin-top: 16px; display: inline-flex; align-items: center; gap: 10px; min-height: 40px; padding: 0 16px; border-radius: 999px; background: #0A0A0A; color: #FFFFFF; font-size: 14px; font-weight: 600">Major de promotion sur 21 étudiants</div>
+                <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px"><span class="chip">Algèbre linéaire</span><span class="chip">Analyse numérique</span><span class="chip">Probabilités</span><span class="chip">Informatique</span><span class="chip">Électronique</span></div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Chapitre 2 -->
+          <li style="position: relative; padding: 0 0 48px 40px">
+            <span aria-hidden="true" style="position: absolute; left: -9px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; border: 3px solid #0A0A0A; box-sizing: border-box"></span>
+            <div style="font-size: 14px; font-weight: 600; color: #525252">Chapitre 2 · 2025 – 2026 · Belfort</div>
+            <h3 style="margin: 4px 0 20px; font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600">Le déclic de l’IA</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
+              <div style="flex: 0 0 160px; width: 160px; height: 120px; box-sizing: border-box; padding: 14px; background: #FFFFFF; border-radius: 18px; box-shadow: 0 1px 2px rgba(10,10,10,0.06), 0 12px 28px rgba(10,10,10,0.12); display: flex; align-items: center; justify-content: center"><img src="assets/logo-utbm.png" decoding="async" alt="Logo UTBM" style="max-width: 100%; max-height: 100%; object-fit: contain"></div>
+              <div style="flex: 1 1 420px; min-width: 0">
+                <p style="margin: 0; font-size: 17px; color: #404040">Cap sur la France et l’UTBM pour ma première année de cycle ingénieur. L’intelligence artificielle y devient concrète : logique des prédicats, satisfaction de contraintes, agents intelligents.</p>
+                <p style="margin: 12px 0 0; font-size: 17px; color: #404040">J’y découvre aussi le monde des données en entreprise, avec l’administration de bases et les systèmes d’information. En parallèle, je rejoins la Junior UTBM comme chargée d’étude de projet.</p>
+                <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px"><span class="chip">Agents intelligents</span><span class="chip">Logique des prédicats</span><span class="chip">Satisfaction de contraintes</span><span class="chip">Administration de BDD</span><span class="chip">Systèmes d’information</span></div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Chapitre 3 -->
+          <li style="position: relative; padding: 0 0 8px 40px">
+            <span aria-hidden="true" style="position: absolute; left: -11px; top: 4px; width: 20px; height: 20px; border-radius: 50%; background: #1D4ED8; box-shadow: 0 0 0 6px #EEF3FF"></span>
+            <div style="font-size: 14px; font-weight: 600; color: #1D4ED8">Chapitre 3 · 2026 – 2028 · Paris · en cours</div>
+            <h3 style="margin: 4px 0 20px; font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600">Cap sur la Data</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
+              <div style="flex: 0 0 160px; width: 160px; height: 120px; box-sizing: border-box; padding: 14px; background: #FFFFFF; border-radius: 18px; box-shadow: 0 1px 2px rgba(10,10,10,0.06), 0 12px 28px rgba(10,10,10,0.12); display: flex; align-items: center; justify-content: center"><img src="assets/logo-efrei.png" decoding="async" alt="Logo EFREI" style="max-width: 100%; max-height: 100%; object-fit: contain"></div>
+              <div style="flex: 1 1 420px; min-width: 0">
+                <p style="margin: 0; font-size: 17px; color: #404040">Aujourd’hui, j’écris la suite à l’EFREI Paris, en cycle ingénieur par alternance, spécialisation Big Data et Machine Learning.</p>
+                <p style="margin: 12px 0 0; font-size: 17px; color: #404040">Deep Learning, MLOps, cloud, LLM et IA générative : j’assemble les outils pour passer de la donnée brute à des modèles utiles. Il me manque une chose, l’entreprise où les mettre au service de vrais enjeux.</p>
+                <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px"><span class="chip chip-b">Data Science</span><span class="chip chip-b">Machine Learning</span><span class="chip chip-b">Deep Learning</span><span class="chip chip-b">Big Data</span><span class="chip chip-b">Cloud</span><span class="chip chip-b">MLOps</span><span class="chip chip-b">LLM et IA générative</span></div>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <div style="background: #0A0A0A; color: #FFFFFF; border-radius: 24px; padding: 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+          <div style="flex: 1 1 320px">
+            <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #93B4FF">Chapitre 4</div>
+            <div style="margin-top: 4px; font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600">Et si on l’écrivait ensemble ?</div>
+            <p style="margin: 6px 0 0; color: #D4D4D4">Alternance de 24 mois en Data et IA, dès septembre 2026.</p>
+          </div>
+          <a class="btn" href="mailto:yontabelva@gmail.com" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; background: #FFFFFF; color: #0A0A0A; text-decoration: none; font-weight: 600">Me contacter</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- EXPÉRIENCE ET PROJETS -->
+    <div class="contents" id="panel-experience" data-panel="experience" hidden>
+      <section role="tabpanel" aria-labelledby="tab-experience" tabindex="0" style="display: flex; flex-direction: column; gap: 24px">
+        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+          <div>
+            <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #1D4ED8">Sur le terrain</div>
+            <h2 style="margin: 6px 0 0; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600">Expérience et projets</h2>
+            <p style="margin: 6px 0 0; color: #525252; max-width: 640px">5 projets choisis pour montrer comment je pilote un projet, traite la donnée, conçois de l’IA et programme du matériel en temps réel.</p>
+          </div>
+          <div role="group" aria-label="Filtrer" style="display: flex; flex-wrap: wrap; gap: 8px">
+            <button class="filt" type="button" data-filter="all" aria-pressed="true">Tout</button>
+            <button class="filt" type="button" data-filter="pro" aria-pressed="false">Expériences</button>
+            <button class="filt" type="button" data-filter="proj" aria-pressed="false">Projets</button>
+          </div>
+        </div>
+
+        <!-- Carte des compétences -->
+        <div class="contents" data-kind="proj">
+          <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 24px; padding: 24px 28px">
+            <h3 style="margin: 0 0 4px; font-size: 17px">Ce que chaque projet démontre</h3>
+            <p style="margin: 0 0 16px; font-size: 14px; color: #525252"><span style="color: #1D4ED8">●</span> compétence centrale · <span style="color: #1D4ED8">○</span> compétence secondaire</p>
+            <div style="overflow-x: auto">
+              <table style="width: 100%; min-width: 680px; border-collapse: collapse; font-size: 15px">
+                <thead>
+                  <tr style="text-align: left; color: #525252; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em">
+                    <th scope="col" style="padding: 10px 8px; font-weight: 600">Projet</th>
+                    <th scope="col" style="padding: 10px 8px; font-weight: 600; text-align: center">Gestion de projet</th>
+                    <th scope="col" style="padding: 10px 8px; font-weight: 600; text-align: center">Data</th>
+                    <th scope="col" style="padding: 10px 8px; font-weight: 600; text-align: center">IA</th>
+                    <th scope="col" style="padding: 10px 8px; font-weight: 600; text-align: center">Temps réel et matériel</th>
+                    <th scope="col" style="padding: 10px 8px; font-weight: 600; text-align: center">Développement</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-top: 1px solid #E5E5E5"><th scope="row" style="padding: 12px 8px; text-align: left; font-weight: 600">01 · MediConnect, pipeline médical</th><td style="text-align: center; color: #1D4ED8; font-size: 18px"><span role="img" aria-label="Centrale">●</span></td><td style="text-align: center; color: #1D4ED8; font-size: 18px"><span role="img" aria-label="Centrale">●</span></td><td style="text-align: center; color: #1D4ED8; font-size: 18px"><span role="img" aria-label="Secondaire">○</span></td><td style="text-align: center; color: #1D4ED8; font-size: 18px"><span role="img" aria-label="Secondaire">○</span></td><td style="text-align: center; color: #1D4ED8; font-size: 18px"><span role="img" aria-label="Secondaire">○</span></td></tr>
+                  <tr style="border-top: 1px solid #E5E5E5"><th scope="row" style="padding: 12px 8px; text-align: left; font-weight: 600">02 · Agent IA Teeko</th><td style="text-align: center; color: #A3A3A3"><span role="img" aria-label="Non">–</span></td><td style="text-align: center; color: #A3A3A3"><span role="img" aria-label="Non">–</span></td><td style="text-align: center; color: #1D4ED8; font-size: 18px"><span role="img" aria-label="Centrale">●</span></td><td style="text-align: center; color: #A3A3A3"><span role="img" aria-label="Non">–</span></td><td style="text-align: center; color: #1D4ED8; font-size: 18px"><span role="img" aria-label="Secondaire">○</span></td></tr>
+                  <tr style="border-top: 1px solid #E5E5E5"><th scope="row" style="padding: 12px 8px; text-align: left; font-weight: 600">03 · Contrôle d’accès RFID temps réel</th><td style="text-align: center; color: #A3A3A3"><span role="img" aria-label="Non">–</span></td><td style="text-align: center; color: #1D4ED8; font-size: 18px"><span role="img" aria-label="Centrale">●</span></td><td style="text-align: center; color: #A3A3A3"><span role="img" aria-label="Non">–</span></td><td style="text-align: center; color: #1D4ED8; font-size: 18px"><span role="img" aria-label="Centrale">●</span></td><td style="text-align: center; color: #1D4ED8; font-size: 18px"><span role="img" aria-label="Centrale">●</span></td></tr>
+                  <tr style="border-top: 1px solid #E5E5E5"><th scope="row" style="padding: 12px 8px; text-align: left; font-weight: 600">04 · PLAY &amp; LEARN, jeu éducatif</th><td style="text-align: center; color: #1D4ED8; font-size: 18px"><span role="img" aria-label="Centrale">●</span></td><td style="text-align: center; color: #1D4ED8; font-size: 18px"><span role="img" aria-label="Secondaire">○</span></td><td style="text-align: center; color: #1D4ED8; font-size: 18px"><span role="img" aria-label="Secondaire">○</span></td><td style="text-align: center; color: #A3A3A3"><span role="img" aria-label="Non">–</span></td><td style="text-align: center; color: #1D4ED8; font-size: 18px"><span role="img" aria-label="Secondaire">○</span></td></tr>
+                  <tr style="border-top: 1px solid #E5E5E5"><th scope="row" style="padding: 12px 8px; text-align: left; font-weight: 600">05 · Recherche d’alternance assistée par IA</th><td style="text-align: center; color: #1D4ED8; font-size: 18px"><span role="img" aria-label="Secondaire">○</span></td><td style="text-align: center; color: #1D4ED8; font-size: 18px"><span role="img" aria-label="Secondaire">○</span></td><td style="text-align: center; color: #1D4ED8; font-size: 18px"><span role="img" aria-label="Centrale">●</span></td><td style="text-align: center; color: #A3A3A3"><span role="img" aria-label="Non">–</span></td><td style="text-align: center; color: #1D4ED8; font-size: 18px"><span role="img" aria-label="Secondaire">○</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- 01 MediConnect -->
+        <div class="contents" data-kind="proj">
+          <article style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 24px">
+            <div>
+              <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+                <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #1D4ED8; margin-right: 4px">01</span>
+                <span style="display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; background: #EEF3FF; color: #1E3A8A; font-size: 13px; font-weight: 600">Data</span>
+                <span style="display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; background: #EEF3FF; color: #1E3A8A; font-size: 13px; font-weight: 600">Gestion de projet</span>
+                <span style="display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; background: #EEF3FF; color: #1E3A8A; font-size: 13px; font-weight: 600">Rôle : coordination et conception</span>
+                <span style="display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; background: #EEF3FF; color: #1E3A8A; font-size: 13px; font-weight: 600">Temps réel</span>
+              </div>
+              <h3 style="margin: 12px 0 0; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600">MediConnect · pipeline analytique médical de bout en bout</h3>
+              <p style="margin: 6px 0 0; color: #525252">Projet en équipe de 4, mené en sprints · mon rôle : backend, API et data</p>
+              <div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px"><span class="chip">PHP API REST</span><span class="chip">Angular 17</span><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Power Query M</span><span class="chip">GitHub Actions</span><span class="chip">PHPUnit</span></div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px">
+              <div style="background: #FAFAFA; border-radius: 16px; padding: 18px"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; color: #1D4ED8">14</div><div style="font-size: 14px; color: #525252">endpoints REST</div></div>
+              <div style="background: #FAFAFA; border-radius: 16px; padding: 18px"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700">19</div><div style="font-size: 14px; color: #525252">visualisations</div></div>
+              <div style="background: #FAFAFA; border-radius: 16px; padding: 18px"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700">4</div><div style="font-size: 14px; color: #525252">personnes, une épic chacune</div></div>
+              <div style="background: #FAFAFA; border-radius: 16px; padding: 18px"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700">6 mois</div><div style="font-size: 14px; color: #525252">de logs structurés</div></div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; color: #404040; font-size: 15px">
+              <div><div style="font-weight: 600; color: #0A0A0A; margin-bottom: 4px">Contexte</div>Plateforme de mise en relation médicale migrée vers une API REST et une application Angular, avec données hybrides MySQL et MongoDB. Organisation en sprints, contrats d’interface validés collectivement.</div>
+              <div><div style="font-weight: 600; color: #0A0A0A; margin-bottom: 4px">Action</div>14 endpoints d’export et d’analytique vers Power BI, mesures DAX (densité médicale, déserts médicaux), génération des créneaux disponibles en temps réel, distance Haversine, tests PHPUnit et CI/CD GitHub Actions.</div>
+              <div><div style="font-weight: 600; color: #0A0A0A; margin-bottom: 4px">Résultat</div>19 visualisations dont 6 cartes KPI, et 6 mois de logs prêts pour un moteur de recommandation et de la prévision de demande.</div>
+            </div>
+          </article>
+        </div>
+
+        <!-- 02 Teeko -->
+        <div class="contents" data-kind="proj">
+          <article style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+            <div>
+              <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+                <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #1D4ED8; margin-right: 4px">02</span>
+                <span style="display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; background: #EEF3FF; color: #1E3A8A; font-size: 13px; font-weight: 600">IA</span>
+              </div>
+              <h3 style="margin: 12px 0 0; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600">Agent IA autonome · jeu Teeko</h3>
+              <div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px"><span class="chip">Python</span><span class="chip">Prolog</span><span class="chip">Pygame</span><span class="chip">Architecture MVC</span><span class="chip">Algorithmes de recherche</span></div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; color: #404040; font-size: 15px">
+              <div><div style="font-weight: 600; color: #0A0A0A; margin-bottom: 4px">Contexte</div>Concevoir un adversaire capable de décider seul, avec un moteur de règles Prolog et un agent Python réunis dans une architecture MVC.</div>
+              <div><div style="font-weight: 600; color: #0A0A0A; margin-bottom: 4px">Action</div>MiniMax avec élagage Alpha-Beta, move ordering, table de transposition, Iterative Deepening et heuristique dédiée (heatmap, patterns de victoire).</div>
+              <div><div style="font-weight: 600; color: #0A0A0A; margin-bottom: 4px">Résultat</div>Profondeur de recherche accrue à temps de calcul constant, coups réfléchis et sans répétition.</div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Stage Sparte Robotics -->
+        <div class="contents" data-kind="pro">
+          <article style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 24px; padding: 32px; display: flex; flex-wrap: wrap; gap: 32px">
+            <div style="flex: 1 1 240px">
+              <span style="display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; background: #0A0A0A; color: #FFFFFF; font-size: 13px; font-weight: 600">Stage</span>
+              <div style="margin-top: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: #1D4ED8">Juil. – août 2024</div>
+              <h3 style="margin: 6px 0 2px; font-size: 22px">Stagiaire ingénieure informatique</h3>
+              <p style="margin: 0; color: #525252">Sparte Robotics, Douala · robotique et systèmes embarqués</p>
+            </div>
+            <div style="flex: 2 1 420px; min-width: 0">
+              <ul style="margin: 0; padding: 0 0 0 18px; color: #404040; display: flex; flex-direction: column; gap: 10px">
+                <li>Système de contrôle d’accès RFID en temps réel sur microcontrôleurs (détaillé dans le projet 03).</li>
+                <li>Programmation Arduino pour une urne électorale intelligente à dépouillement automatisé.</li>
+                <li>Développement du site web de la Cameroon Robotics Association.</li>
+                <li>Encadrement de jeunes en robotique et automatisation à l’IFC.</li>
+              </ul>
+              <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px"><span class="chip chip-b">ESP32</span><span class="chip chip-b">Arduino</span><span class="chip chip-b">Capteurs RFID</span><span class="chip chip-b">WebSocket</span><span class="chip chip-b">Temps réel</span></div>
+            </div>
+          </article>
+        </div>
+
+        <!-- 03 RFID -->
+        <div class="contents" data-kind="proj">
+          <article style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 22px">
+            <div>
+              <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+                <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #1D4ED8; margin-right: 4px">03</span>
+                <span style="display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; background: #EEF3FF; color: #1E3A8A; font-size: 13px; font-weight: 600">Temps réel</span>
+                <span style="display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; background: #EEF3FF; color: #1E3A8A; font-size: 13px; font-weight: 600">Programmation matérielle</span>
+                <span style="display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; background: #EEF3FF; color: #1E3A8A; font-size: 13px; font-weight: 600">Data</span>
+              </div>
+              <h3 style="margin: 12px 0 0; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600">Contrôle d’accès RFID en temps réel</h3>
+              <p style="margin: 6px 0 0; color: #525252">Réalisé pendant mon stage chez Sparte Robotics</p>
+              <div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px"><span class="chip">ESP32</span><span class="chip">Arduino</span><span class="chip">C / C++</span><span class="chip">Lecteurs RFID</span><span class="chip">WebSocket</span><span class="chip">Java</span></div>
+            </div>
+
+            <div style="background: #0A0A0A; color: #FFFFFF; border-radius: 18px; padding: 20px 22px">
+              <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #93B4FF; margin-bottom: 12px">Du capteur au serveur, en temps réel</div>
+              <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 14px">
+                <li style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 12px; background: #171717; border: 1px solid #333333">Badge RFID</li>
+                <li aria-hidden="true" style="color: #93B4FF">→</li>
+                <li style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 12px; background: #171717; border: 1px solid #333333">Lecture sur ESP32 / Arduino</li>
+                <li aria-hidden="true" style="color: #93B4FF">→</li>
+                <li style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 12px; background: #1D4ED8; border: 1px solid #1D4ED8">WebSocket temps réel</li>
+                <li aria-hidden="true" style="color: #93B4FF">→</li>
+                <li style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 12px; background: #171717; border: 1px solid #333333">Traitement serveur Java</li>
+                <li aria-hidden="true" style="color: #93B4FF">→</li>
+                <li style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 12px; background: #171717; border: 1px solid #333333">Journal d’accès tracé</li>
+              </ol>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; color: #404040; font-size: 15px">
+              <div><div style="font-weight: 600; color: #0A0A0A; margin-bottom: 4px">Contexte</div>Contrôler et tracer les accès d’un site en temps réel, à partir de capteurs physiques.</div>
+              <div><div style="font-weight: 600; color: #0A0A0A; margin-bottom: 4px">Action</div>Programmation des microcontrôleurs ESP32 et Arduino pour lire les badges RFID, envoi immédiat des événements par WebSocket et traitement côté serveur Java, puis structuration et documentation des flux.</div>
+              <div><div style="font-weight: 600; color: #0A0A0A; margin-bottom: 4px">Résultat</div>Chaque passage de badge devient une donnée exploitable et traçable, de la capture matérielle jusqu’au serveur.</div>
+            </div>
+          </article>
+        </div>
+
+        <!-- 04 PLAY & LEARN -->
+        <div class="contents" data-kind="proj">
+          <article style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+            <div>
+              <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+                <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #1D4ED8; margin-right: 4px">04</span>
+                <span style="display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; background: #EEF3FF; color: #1E3A8A; font-size: 13px; font-weight: 600">Gestion de projet</span>
+                <span style="display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; background: #EEF3FF; color: #1E3A8A; font-size: 13px; font-weight: 600">Conception IHM</span>
+              </div>
+              <h3 style="margin: 12px 0 0; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600">PLAY &amp; LEARN · jeu éducatif interactif pour enfants</h3>
+              <p style="margin: 6px 0 0; color: #525252">Application d’apprentissage pour les 10 – 12 ans, sur mobile et ordinateur</p>
+              <div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px"><span class="chip">Analyse de tâches HTA</span><span class="chip">SADT</span><span class="chip">UML</span><span class="chip">SQLite</span><span class="chip">Firebase Firestore</span><span class="chip">Gamification</span></div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px">
+              <div style="background: #FAFAFA; border-radius: 16px; padding: 18px"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; color: #1D4ED8">3</div><div style="font-size: 14px; color: #525252">profils : enfant, parent, système</div></div>
+              <div style="background: #FAFAFA; border-radius: 16px; padding: 18px"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700">2</div><div style="font-size: 14px; color: #525252">modes de jeu : Étude et Challenge</div></div>
+              <div style="background: #FAFAFA; border-radius: 16px; padding: 18px"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700">4</div><div style="font-size: 14px; color: #525252">plateformes : iOS, Android, Windows, macOS</div></div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; color: #404040; font-size: 15px">
+              <div><div style="font-weight: 600; color: #0A0A0A; margin-bottom: 4px">Contexte</div>Concevoir un jeu qui fait apprendre en s’amusant, utilisable hors ligne, avec un suivi pour les parents et leur accord avant toute utilisation.</div>
+              <div><div style="font-weight: 600; color: #0A0A0A; margin-bottom: 4px">Action</div>Recueil des besoins par profil, découpage en phases, analyse de tâches HTA, diagrammes SADT et diagramme de classes. Parcours adaptatif, badges et niveaux, données locales synchronisées dans le cloud.</div>
+              <div><div style="font-weight: 600; color: #0A0A0A; margin-bottom: 4px">Résultat</div>Un rôle à double casquette : j’ai coordonné l’équipe (planning, répartition des tâches, suivi des livrables) tout en contribuant directement à la conception. Livrable : un dossier complet qui relie besoins, parcours utilisateur et modèle de données.</div>
+            </div>
+          </article>
+        </div>
+
+        <!-- 05 Recherche d'alternance -->
+        <div class="contents" data-kind="proj">
+          <article style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+            <div>
+              <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+                <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #1D4ED8; margin-right: 4px">05</span>
+                <span style="display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; background: #EEF3FF; color: #1E3A8A; font-size: 13px; font-weight: 600">IA générative</span>
+                <span style="display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; background: #EEF3FF; color: #1E3A8A; font-size: 13px; font-weight: 600">Automatisation</span>
+              </div>
+              <h3 style="margin: 12px 0 0; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600">Recherche d’alternance assistée par IA</h3>
+              <p style="margin: 6px 0 0; color: #525252">Ma propre boîte à outils de candidature, construite sur Claude</p>
+              <div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px"><span class="chip">Claude</span><span class="chip">Prompt engineering</span><span class="chip">Chaînage de prompts</span><span class="chip">Agent Skills</span><span class="chip">GitHub Pages</span></div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px">
+              <div style="background: #FAFAFA; border-radius: 16px; padding: 18px">
+                <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: #1D4ED8">Analyse ATS</div>
+                <p style="margin: 6px 0 0; font-size: 14px; color: #525252">Score le CV face à une offre sur 100, liste les mots-clés manquants et réécrit l’expérience sans rien inventer.</p>
+              </div>
+              <div style="background: #FAFAFA; border-radius: 16px; padding: 18px">
+                <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: #1D4ED8">Message de recrutement</div>
+                <p style="margin: 6px 0 0; font-size: 14px; color: #525252">Lit l’offre, recherche l’actualité de l’entreprise et rédige un message ancré dans mon vrai parcours.</p>
+              </div>
+              <div style="background: #FAFAFA; border-radius: 16px; padding: 18px">
+                <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: #1D4ED8">Portfolio projet</div>
+                <p style="margin: 6px 0 0; font-size: 14px; color: #525252">Transforme un projet en page Contexte, Action, Résultat, prête à publier sur GitHub Pages.</p>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; color: #404040; font-size: 15px">
+              <div><div style="font-weight: 600; color: #0A0A0A; margin-bottom: 4px">Contexte</div>Chaque candidature doit être personnalisée, et les offres se comptent par dizaines.</div>
+              <div><div style="font-weight: 600; color: #0A0A0A; margin-bottom: 4px">Action</div>Conception de 3 skills réutilisables : étapes enchaînées, sources vérifiées, solution de repli quand une page est bloquée et règle stricte de ne jamais inventer d’information.</div>
+              <div><div style="font-weight: 600; color: #0A0A0A; margin-bottom: 4px">Résultat</div>Un processus de candidature reproductible, personnalisé pour chaque offre et pour chaque entreprise.</div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Junior UTBM -->
+        <div class="contents" data-kind="pro">
+          <article style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 24px; padding: 32px; display: flex; flex-wrap: wrap; gap: 32px">
+            <div style="flex: 1 1 240px">
+              <span style="display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; background: #0A0A0A; color: #FFFFFF; font-size: 13px; font-weight: 600">Engagement</span>
+              <div style="margin-top: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 600">2026</div>
+              <h3 style="margin: 6px 0 2px; font-size: 22px">Chargée d’étude de projet</h3>
+              <p style="margin: 0; color: #525252">Junior UTBM, Belfort</p>
+            </div>
+            <div style="flex: 2 1 420px; min-width: 0; color: #404040">Étude de projets clients au sein de la Junior-Entreprise de l’UTBM.</div>
+          </article>
+        </div>
+
+        <a class="btn btn-line" href="https://github.com/KYSyB2006" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border: 1px solid #D4D4D4; border-radius: 999px; color: #0A0A0A; text-decoration: none; font-weight: 600">Voir le code sur GitHub</a>
+      </section>
+    </div>
+
+    <!-- GITHUB -->
+    <div class="contents" id="panel-github" data-panel="github" hidden>
+      <section role="tabpanel" aria-labelledby="tab-github" tabindex="0" style="display: flex; flex-direction: column; gap: 24px">
+        <div style="background: #0A0A0A; color: #FFFFFF; border-radius: 24px; padding: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
+          <div aria-hidden="true" style="width: 88px; height: 88px; border-radius: 50%; background: #1D4ED8; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700">BY</div>
+          <div style="flex: 1 1 260px">
+            <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600">@KYSyB2006</h2>
+            <p style="margin: 4px 0 0; color: #A3A3A3">Data, IA et projets d’ingénierie</p>
+          </div>
+          <a class="btn" href="https://github.com/KYSyB2006" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; background: #FFFFFF; color: #0A0A0A; text-decoration: none; font-weight: 600">Voir le profil GitHub</a>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px">
+          <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 20px"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700"><span id="gh-repos" class="gh-sk">00</span></div><div style="font-size: 14px; color: #525252">dépôts publics</div></div>
+          <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 20px"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700"><span id="gh-followers" class="gh-sk">00</span></div><div style="font-size: 14px; color: #525252">abonnés</div></div>
+          <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 20px"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #1D4ED8"><span id="gh-lang" class="gh-sk">Python</span></div><div style="font-size: 14px; color: #525252">le plus utilisé</div></div>
+        </div>
+        <div>
+          <h3 style="margin: 0 0 12px; font-size: 18px">Derniers dépôts mis à jour</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px" id="gh-list" aria-live="polite">
+          </div>
+        </div>
+        <p id="gh-note" style="margin: 0; font-size: 14px; color: #525252">Chiffres et dépôts chargés en direct depuis GitHub.</p>
+      </section>
+    </div>
+
+  </main>
+
+  <footer style="border-top: 1px solid #E5E5E5; background: #FFFFFF">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px; color: #525252">
+      <span>Belva YONTA · +33 7 45 73 90 09 · <a href="mailto:yontabelva@gmail.com">yontabelva@gmail.com</a></span>
+      <span>Paris, Île-de-France</span>
+    </div>
+  </footer>
+</div>
+<script>
+(function () {
+  'use strict';
+  var USER = 'KYSyB2006';
+
+  /* ---------- Onglets (avec lien direct #section et flèches du clavier) ---------- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('[data-panel]'));
+  var ids = tabs.map(function (t) { return t.id.replace('tab-', ''); });
+
+  function show(id, focus, push) {
+    if (ids.indexOf(id) < 0) id = 'profil';
+    tabs.forEach(function (t) {
+      var on = t.id === 'tab-' + id;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      if (on) {
+        if (focus) t.focus();
+        if (t.scrollIntoView) t.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      }
+    });
+    panels.forEach(function (p) { p.hidden = p.getAttribute('data-panel') !== id; });
+    if (push && history.replaceState) history.replaceState(null, '', id === 'profil' ? location.pathname : '#' + id);
+    if (id === 'github') loadGitHub();
+  }
+
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { show(ids[i], false, true); });
+    t.addEventListener('keydown', function (e) {
+      var n = null;
+      if (e.key === 'ArrowRight') n = (i + 1) % tabs.length;
+      else if (e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+      else if (e.key === 'Home') n = 0;
+      else if (e.key === 'End') n = tabs.length - 1;
+      if (n !== null) { e.preventDefault(); show(ids[n], true, true); }
+    });
+  });
+  window.addEventListener('hashchange', function () { show(location.hash.slice(1), false, false); });
+  show(location.hash.slice(1), false, false);
+
+  /* ---------- Filtres Expériences / Projets ---------- */
+  var filts = Array.prototype.slice.call(document.querySelectorAll('[data-filter]'));
+  filts.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = b.getAttribute('data-filter');
+      filts.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      document.querySelectorAll('[data-kind]').forEach(function (el) {
+        el.hidden = f !== 'all' && el.getAttribute('data-kind') !== f;
+      });
+    });
+  });
+
+  /* ---------- Onglet GitHub : données en direct ---------- */
+  var loaded = false;
+  var LANG_COLORS = { Python: '#1D4ED8', 'Jupyter Notebook': '#1D4ED8', JavaScript: '#0A0A0A', TypeScript: '#1E3A8A',
+    PHP: '#3B5BDB', Java: '#404040', 'C++': '#525252', C: '#737373', HTML: '#171717', Prolog: '#0A0A0A' };
+
+  function el(tag, attrs, text) {
+    var e = document.createElement(tag);
+    for (var k in attrs) if (Object.prototype.hasOwnProperty.call(attrs, k)) e.setAttribute(k, attrs[k]);
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  function setStat(id, v) {
+    var n = document.getElementById(id);
+    if (!n) return;
+    n.textContent = v;
+    n.className = '';
+  }
+  function cacheGet(k) { try { var v = sessionStorage.getItem(k); return v ? JSON.parse(v) : null; } catch (e) { return null; } }
+  function cacheSet(k, v) { try { sessionStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* stockage indisponible */ } }
+
+  function getJSON(url) {
+    var c = cacheGet(url);
+    if (c) return Promise.resolve(c);
+    return fetch(url, { headers: { Accept: 'application/vnd.github+json' } }).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    }).then(function (j) { cacheSet(url, j); return j; });
+  }
+
+  function render(user, repos) {
+    var own = repos.filter(function (r) { return !r.fork && !r.archived && r.name.toLowerCase() !== (USER + '.github.io').toLowerCase(); });
+    setStat('gh-repos', String(user.public_repos));
+    setStat('gh-followers', String(user.followers));
+    var count = {};
+    own.forEach(function (r) { if (r.language) count[r.language] = (count[r.language] || 0) + 1; });
+    var top = Object.keys(count).sort(function (a, b) { return count[b] - count[a]; })[0];
+    setStat('gh-lang', top || '—');
+
+    var list = document.getElementById('gh-list');
+    list.textContent = '';
+    own.slice(0, 6).forEach(function (r) {
+      var a = el('a', { 'class': 'card-h', href: r.html_url, rel: 'noopener',
+        style: 'display: block; background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 20px; padding: 24px; color: #0A0A0A; text-decoration: none; transition: all .15s' });
+      a.appendChild(el('div', { style: "font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 18px; overflow-wrap: anywhere" }, r.name));
+      a.appendChild(el('p', { style: 'margin: 6px 0 14px; color: #525252; font-size: 15px' }, r.description || 'Pas encore de description.'));
+      var meta = el('div', { style: 'display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; font-size: 14px; color: #404040' });
+      if (r.language) {
+        var lg = el('span', { style: 'display: inline-flex; align-items: center; gap: 8px' });
+        lg.appendChild(el('span', { 'aria-hidden': 'true', style: 'width: 10px; height: 10px; border-radius: 50%; background: ' + (LANG_COLORS[r.language] || '#A3A3A3') }));
+        lg.appendChild(document.createTextNode(r.language));
+        meta.appendChild(lg);
+      }
+      var d = new Date(r.pushed_at);
+      meta.appendChild(el('span', null, 'Mis à jour le ' + d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' })));
+      if (r.stargazers_count) meta.appendChild(el('span', null, r.stargazers_count + (r.stargazers_count > 1 ? ' étoiles' : ' étoile')));
+      a.appendChild(meta);
+      list.appendChild(a);
+    });
+    if (!own.length) list.appendChild(el('p', { style: 'margin: 0; color: #525252' }, 'Aucun dépôt public pour le moment.'));
+  }
+
+  function fail() {
+    ['gh-repos', 'gh-followers', 'gh-lang'].forEach(function (id) { setStat(id, '—'); });
+    var list = document.getElementById('gh-list');
+    list.textContent = '';
+    var p = el('p', { style: 'margin: 0; color: #525252' }, 'GitHub ne répond pas pour le moment. ');
+    p.appendChild(el('a', { href: 'https://github.com/' + USER + '?tab=repositories' }, 'Voir tous mes dépôts sur GitHub'));
+    list.appendChild(p);
+    document.getElementById('gh-note').textContent = '';
+    loaded = false;
+  }
+
+  function loadGitHub() {
+    if (loaded) return;
+    loaded = true;
+    var base = 'https://api.github.com/users/' + USER;
+    Promise.all([getJSON(base), getJSON(base + '/repos?per_page=100&sort=pushed')])
+      .then(function (r) { render(r[0], r[1]); })
+      .catch(fail);
+  }
+})();
+</script>
+
+</body>
+</html>
