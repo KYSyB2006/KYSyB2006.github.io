@@ -2,7 +2,7 @@
 
 Élève ingénieure Data et IA à l'EFREI Paris (Big Data et Machine Learning), **disponible immédiatement en alternance** (jusqu'à l'été 2028, rythme 3 jours en entreprise / 2 jours à l’école).
 
-👉 **Voir le portfolio : https://kysyb2006.github.io/belva.yonta/**
+👉 **Voir le portfolio : https://kysyb2006.github.io/**
 
 ## Contenu
 - **Profil** : ce que j'apporte, chiffres clés, distinctions, centres d'intérêt
